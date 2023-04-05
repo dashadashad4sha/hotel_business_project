@@ -1,46 +1,3 @@
-//// Navbar/Sidebar
-//const menuBtn = document.querySelectorAll('.menu-btn')
-//const menu = document.querySelector('.menu')
-//const links = document.querySelector('.menu li')
-//
-////Toggle sidebar open/close
-//menuBtn.forEach(btn => {
-//    btn.addEventListener('click', sideNavToggle);
-//})
-//
-//function sideNavToggle() {
-//    //Animation delay
-//    let delay = 100;
-//    // Toggle open class
-//    menu.classList.toggle('menu-open');
-//
-//    setTimeout(() => {
-//        resetAnimations();
-//    }, delay * (links.length + 1));
-//
-//    links.forEach(link => {
-//
-//        link.style.opacity = "0";
-//
-//        link.style.animation =
-//            "slideIn 400ms ease-in-out forwards";
-//
-//        link.style.animationDelay = delay + "ms";
-//
-//        delay += 100;
-//    });
-//
-//    function resetAnimations() {
-//        links.forEach(link => {
-//            link.style.animation = "none";
-//
-//            link.style.opacity = "1";
-//        });
-//    }
-//}
-
-// Slider
-
 const cntrl = document.querySelectorAll('.slider-cntrl');
 const cntrlMob = document.querySelectorAll('.pagination-mobile > li');
 const title = document.querySelector('.title');
@@ -64,10 +21,15 @@ const progressWidth = [
 ] ;
 
 const text = [
-    'Work',
-    'Active',
-    'Travel',
+    'Гостиничное дело',
+    'Что нужно изучать',
+    'Карьерные возможности',
 ];
+
+const_subtitles = [
+    'бизнес отрасль в сфере услуг отелей, гостиниц, баз отдыха, основная цель которой максимальное удовлетворение потребности потребителя, обеспечение высокого уровня комфорта, удовлетворение различных бытовых, хозяйственных и культурных запросов посетителей',
+    'Стандартизация и контроль качества гостиничных услуг, Организация службы приема и размещения, Делопроизводство в гостинице, Бухгалтерский учет в гостиничной индустрии, Правовые основы гостиничной деятельности, Управление номерным фондом, Организация службы питания, Оборудование гостиничных и ресторанных предприятий, Контроль качества ресторанной продукции и услуг, Товароведение продовольственных товаров',
+    'С образованиемв области гостиничного дела можно работать в различных сферах отельного и ресторанного бизнеса и занимать любые должности — от рядового портье до управляющего']
 
 for(let i = 0; i < cntrl.length; i++) {
     cntrl[i].addEventListener('click', () => {
@@ -88,9 +50,9 @@ cntrlMob[i].addEventListener('click', () => {
 function slider(i) {
     img.src = images[i];
     progress.style.width = progressWidth[i];
-    title.innerText = text[i] + " Collection";
+    title.innerText = text[i];
     subTitle.forEach(sub => {
-        sub.innerText = text[i] + " Collection"
+        sub.innerText = const_subtitles[i]
     });
 
     count.innerText = "/0" + (i + 1);
